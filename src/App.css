@@ -76,14 +76,7 @@
   --sidebar-ring: #a78bfa;
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground font-sans;
-  }
-}
+/* Base styles moved to index.css */
 
 /* Custom styles for Kids B-Care */
 .kids-gradient {
