@@ -1,0 +1,802 @@
+{
+  "person": {
+    "id": 0,
+    "name": "person",
+    "kid_friendly_name": "person",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "bicycle": {
+    "id": 1,
+    "name": "bicycle",
+    "kid_friendly_name": "bicycle",
+    "category": "Vehicles",
+    "safety_level": "caution",
+    "age_appropriate": "6+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "car": {
+    "id": 2,
+    "name": "car",
+    "kid_friendly_name": "car",
+    "category": "Vehicles",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "medium",
+    "has_nutrition_info": false
+  },
+  "motorcycle": {
+    "id": 3,
+    "name": "motorcycle",
+    "kid_friendly_name": "motorcycle",
+    "category": "Vehicles",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "airplane": {
+    "id": 4,
+    "name": "airplane",
+    "kid_friendly_name": "airplane",
+    "category": "Vehicles",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "medium",
+    "has_nutrition_info": false
+  },
+  "bus": {
+    "id": 5,
+    "name": "bus",
+    "kid_friendly_name": "bus",
+    "category": "Vehicles",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "train": {
+    "id": 6,
+    "name": "train",
+    "kid_friendly_name": "train",
+    "category": "Vehicles",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "truck": {
+    "id": 7,
+    "name": "truck",
+    "kid_friendly_name": "truck",
+    "category": "Vehicles",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "boat": {
+    "id": 8,
+    "name": "boat",
+    "kid_friendly_name": "boat",
+    "category": "Vehicles",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "traffic light": {
+    "id": 9,
+    "name": "traffic light",
+    "kid_friendly_name": "traffic light",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "fire hydrant": {
+    "id": 10,
+    "name": "fire hydrant",
+    "kid_friendly_name": "fire hydrant",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "stop sign": {
+    "id": 11,
+    "name": "stop sign",
+    "kid_friendly_name": "stop sign",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "parking meter": {
+    "id": 12,
+    "name": "parking meter",
+    "kid_friendly_name": "parking meter",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "bench": {
+    "id": 13,
+    "name": "bench",
+    "kid_friendly_name": "bench",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "bird": {
+    "id": 14,
+    "name": "bird",
+    "kid_friendly_name": "bird",
+    "category": "Animals",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "cat": {
+    "id": 15,
+    "name": "cat",
+    "kid_friendly_name": "cat",
+    "category": "Animals",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "medium",
+    "has_nutrition_info": false
+  },
+  "dog": {
+    "id": 16,
+    "name": "dog",
+    "kid_friendly_name": "dog",
+    "category": "Animals",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "medium",
+    "has_nutrition_info": false
+  },
+  "horse": {
+    "id": 17,
+    "name": "horse",
+    "kid_friendly_name": "horse",
+    "category": "Animals",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "sheep": {
+    "id": 18,
+    "name": "sheep",
+    "kid_friendly_name": "sheep",
+    "category": "Animals",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "cow": {
+    "id": 19,
+    "name": "cow",
+    "kid_friendly_name": "cow",
+    "category": "Animals",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "elephant": {
+    "id": 20,
+    "name": "elephant",
+    "kid_friendly_name": "elephant",
+    "category": "Animals",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "bear": {
+    "id": 21,
+    "name": "bear",
+    "kid_friendly_name": "bear",
+    "category": "Animals",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "zebra": {
+    "id": 22,
+    "name": "zebra",
+    "kid_friendly_name": "zebra",
+    "category": "Animals",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "giraffe": {
+    "id": 23,
+    "name": "giraffe",
+    "kid_friendly_name": "giraffe",
+    "category": "Animals",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "backpack": {
+    "id": 24,
+    "name": "backpack",
+    "kid_friendly_name": "backpack",
+    "category": "School",
+    "safety_level": "caution",
+    "age_appropriate": "6+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "umbrella": {
+    "id": 25,
+    "name": "umbrella",
+    "kid_friendly_name": "umbrella",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "handbag": {
+    "id": 26,
+    "name": "handbag",
+    "kid_friendly_name": "handbag",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "tie": {
+    "id": 27,
+    "name": "tie",
+    "kid_friendly_name": "tie",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "suitcase": {
+    "id": 28,
+    "name": "suitcase",
+    "kid_friendly_name": "suitcase",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "frisbee": {
+    "id": 29,
+    "name": "frisbee",
+    "kid_friendly_name": "frisbee",
+    "category": "Toys",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "skis": {
+    "id": 30,
+    "name": "skis",
+    "kid_friendly_name": "skis",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "snowboard": {
+    "id": 31,
+    "name": "snowboard",
+    "kid_friendly_name": "snowboard",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "sports ball": {
+    "id": 32,
+    "name": "sports ball",
+    "kid_friendly_name": "ball",
+    "category": "Toys",
+    "safety_level": "safe",
+    "age_appropriate": "2+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "kite": {
+    "id": 33,
+    "name": "kite",
+    "kid_friendly_name": "kite",
+    "category": "Toys",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "baseball bat": {
+    "id": 34,
+    "name": "baseball bat",
+    "kid_friendly_name": "baseball bat",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "baseball glove": {
+    "id": 35,
+    "name": "baseball glove",
+    "kid_friendly_name": "baseball glove",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "skateboard": {
+    "id": 36,
+    "name": "skateboard",
+    "kid_friendly_name": "skateboard",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "surfboard": {
+    "id": 37,
+    "name": "surfboard",
+    "kid_friendly_name": "surfboard",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "tennis racket": {
+    "id": 38,
+    "name": "tennis racket",
+    "kid_friendly_name": "tennis racket",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "bottle": {
+    "id": 39,
+    "name": "bottle",
+    "kid_friendly_name": "bottle",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "wine glass": {
+    "id": 40,
+    "name": "wine glass",
+    "kid_friendly_name": "glass",
+    "category": "Other Objects",
+    "safety_level": "supervised",
+    "age_appropriate": "13+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "cup": {
+    "id": 41,
+    "name": "cup",
+    "kid_friendly_name": "cup",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "fork": {
+    "id": 42,
+    "name": "fork",
+    "kid_friendly_name": "fork",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "knife": {
+    "id": 43,
+    "name": "knife",
+    "kid_friendly_name": "knife",
+    "category": "Other Objects",
+    "safety_level": "supervised",
+    "age_appropriate": "13+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "spoon": {
+    "id": 44,
+    "name": "spoon",
+    "kid_friendly_name": "spoon",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "bowl": {
+    "id": 45,
+    "name": "bowl",
+    "kid_friendly_name": "bowl",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "banana": {
+    "id": 46,
+    "name": "banana",
+    "kid_friendly_name": "banana",
+    "category": "Food",
+    "safety_level": "safe",
+    "age_appropriate": "2+",
+    "educational_value": "low",
+    "has_nutrition_info": true
+  },
+  "apple": {
+    "id": 47,
+    "name": "apple",
+    "kid_friendly_name": "apple",
+    "category": "Food",
+    "safety_level": "safe",
+    "age_appropriate": "2+",
+    "educational_value": "high",
+    "has_nutrition_info": true
+  },
+  "sandwich": {
+    "id": 48,
+    "name": "sandwich",
+    "kid_friendly_name": "sandwich",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "orange": {
+    "id": 49,
+    "name": "orange",
+    "kid_friendly_name": "orange",
+    "category": "Food",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": true
+  },
+  "broccoli": {
+    "id": 50,
+    "name": "broccoli",
+    "kid_friendly_name": "broccoli",
+    "category": "Food",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "high",
+    "has_nutrition_info": true
+  },
+  "carrot": {
+    "id": 51,
+    "name": "carrot",
+    "kid_friendly_name": "carrot",
+    "category": "Food",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": true
+  },
+  "hot dog": {
+    "id": 52,
+    "name": "hot dog",
+    "kid_friendly_name": "hotdog",
+    "category": "Food",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "pizza": {
+    "id": 53,
+    "name": "pizza",
+    "kid_friendly_name": "pizza",
+    "category": "Food",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "donut": {
+    "id": 54,
+    "name": "donut",
+    "kid_friendly_name": "donut",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "cake": {
+    "id": 55,
+    "name": "cake",
+    "kid_friendly_name": "cake",
+    "category": "Food",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "chair": {
+    "id": 56,
+    "name": "chair",
+    "kid_friendly_name": "chair",
+    "category": "Household",
+    "safety_level": "safe",
+    "age_appropriate": "3+",
+    "educational_value": "medium",
+    "has_nutrition_info": false
+  },
+  "couch": {
+    "id": 57,
+    "name": "couch",
+    "kid_friendly_name": "couch",
+    "category": "Household",
+    "safety_level": "safe",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "potted plant": {
+    "id": 58,
+    "name": "potted plant",
+    "kid_friendly_name": "plant",
+    "category": "Nature",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "bed": {
+    "id": 59,
+    "name": "bed",
+    "kid_friendly_name": "bed",
+    "category": "Household",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "dining table": {
+    "id": 60,
+    "name": "dining table",
+    "kid_friendly_name": "table",
+    "category": "Household",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "toilet": {
+    "id": 61,
+    "name": "toilet",
+    "kid_friendly_name": "toilet",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "tv": {
+    "id": 62,
+    "name": "tv",
+    "kid_friendly_name": "tv",
+    "category": "Household",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "laptop": {
+    "id": 63,
+    "name": "laptop",
+    "kid_friendly_name": "laptop",
+    "category": "Household",
+    "safety_level": "caution",
+    "age_appropriate": "6+",
+    "educational_value": "high",
+    "has_nutrition_info": false
+  },
+  "mouse": {
+    "id": 64,
+    "name": "mouse",
+    "kid_friendly_name": "mouse",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "remote": {
+    "id": 65,
+    "name": "remote",
+    "kid_friendly_name": "remote",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "keyboard": {
+    "id": 66,
+    "name": "keyboard",
+    "kid_friendly_name": "keyboard",
+    "category": "School",
+    "safety_level": "caution",
+    "age_appropriate": "6+",
+    "educational_value": "high",
+    "has_nutrition_info": false
+  },
+  "cell phone": {
+    "id": 67,
+    "name": "cell phone",
+    "kid_friendly_name": "phone",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "microwave": {
+    "id": 68,
+    "name": "microwave",
+    "kid_friendly_name": "microwave",
+    "category": "Other Objects",
+    "safety_level": "supervised",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "oven": {
+    "id": 69,
+    "name": "oven",
+    "kid_friendly_name": "oven",
+    "category": "Other Objects",
+    "safety_level": "supervised",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "toaster": {
+    "id": 70,
+    "name": "toaster",
+    "kid_friendly_name": "toaster",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "sink": {
+    "id": 71,
+    "name": "sink",
+    "kid_friendly_name": "sink",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "refrigerator": {
+    "id": 72,
+    "name": "refrigerator",
+    "kid_friendly_name": "refrigerator",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "book": {
+    "id": 73,
+    "name": "book",
+    "kid_friendly_name": "book",
+    "category": "School",
+    "safety_level": "safe",
+    "age_appropriate": "2+",
+    "educational_value": "high",
+    "has_nutrition_info": false
+  },
+  "clock": {
+    "id": 74,
+    "name": "clock",
+    "kid_friendly_name": "clock",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "vase": {
+    "id": 75,
+    "name": "vase",
+    "kid_friendly_name": "vase",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "scissors": {
+    "id": 76,
+    "name": "scissors",
+    "kid_friendly_name": "scissors",
+    "category": "Other Objects",
+    "safety_level": "supervised",
+    "age_appropriate": "13+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "teddy bear": {
+    "id": 77,
+    "name": "teddy bear",
+    "kid_friendly_name": "teddy",
+    "category": "Toys",
+    "safety_level": "safe",
+    "age_appropriate": "2+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "hair drier": {
+    "id": 78,
+    "name": "hair drier",
+    "kid_friendly_name": "hair dryer",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  },
+  "toothbrush": {
+    "id": 79,
+    "name": "toothbrush",
+    "kid_friendly_name": "toothbrush",
+    "category": "Other Objects",
+    "safety_level": "caution",
+    "age_appropriate": "3+",
+    "educational_value": "low",
+    "has_nutrition_info": false
+  }
+}

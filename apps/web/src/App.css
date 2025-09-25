@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Kids B-Care Theme - Pastel Colors */
+:root {
+  --radius: 1rem;
+  /* Soft pastel background */
+  --background: #fef7ff;
+  --foreground: #2d1b69;
+  --card: #ffffff;
+  --card-foreground: #2d1b69;
+  --popover: #ffffff;
+  --popover-foreground: #2d1b69;
+  /* Primary: Soft purple */
+  --primary: #8b5cf6;
+  --primary-foreground: #ffffff;
+  /* Secondary: Soft pink */
+  --secondary: #f8bbff;
+  --secondary-foreground: #2d1b69;
+  /* Muted: Light lavender */
+  --muted: #f3e8ff;
+  --muted-foreground: #6b7280;
+  /* Accent: Soft mint */
+  --accent: #bbf7d0;
+  --accent-foreground: #2d1b69;
+  --destructive: #ef4444;
+  --border: #e5e7eb;
+  --input: #f9fafb;
+  --ring: #8b5cf6;
+  /* Chart colors - kid-friendly pastels */
+  --chart-1: #fbbf24; /* Sunny yellow */
+  --chart-2: #60a5fa; /* Sky blue */
+  --chart-3: #f87171; /* Coral pink */
+  --chart-4: #34d399; /* Mint green */
+  --chart-5: #a78bfa; /* Lavender */
+  --sidebar: #fef7ff;
+  --sidebar-foreground: #2d1b69;
+  --sidebar-primary: #8b5cf6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f3e8ff;
+  --sidebar-accent-foreground: #2d1b69;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #8b5cf6;
+}
+
+.dark {
+  --background: #1e1b4b;
+  --foreground: #f8fafc;
+  --card: #312e81;
+  --card-foreground: #f8fafc;
+  --popover: #312e81;
+  --popover-foreground: #f8fafc;
+  --primary: #a78bfa;
+  --primary-foreground: #1e1b4b;
+  --secondary: #4c1d95;
+  --secondary-foreground: #f8fafc;
+  --muted: #3730a3;
+  --muted-foreground: #94a3b8;
+  --accent: #059669;
+  --accent-foreground: #f8fafc;
+  --destructive: #dc2626;
+  --border: #4c1d95;
+  --input: #3730a3;
+  --ring: #a78bfa;
+  --chart-1: #fbbf24;
+  --chart-2: #60a5fa;
+  --chart-3: #f87171;
+  --chart-4: #34d399;
+  --chart-5: #a78bfa;
+  --sidebar: #1e1b4b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #a78bfa;
+  --sidebar-primary-foreground: #1e1b4b;
+  --sidebar-accent: #3730a3;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #4c1d95;
+  --sidebar-ring: #a78bfa;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Custom styles for Kids B-Care */
+.kids-gradient {
+  background: linear-gradient(135deg, #fbbf24 0%, #f87171 25%, #60a5fa 50%, #34d399 75%, #a78bfa 100%);
+}
+
+.kids-card {
+  @apply bg-white/80 backdrop-blur-sm border-2 border-purple-200 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.kids-button {
+  @apply bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200;
+}
+
+.kids-icon {
+  @apply w-12 h-12 text-purple-500;
+}
+
+.detection-box {
+  @apply absolute border-4 border-yellow-400 bg-yellow-400/20 rounded-lg;
+}
+
+.detection-label {
+  @apply absolute -top-8 left-0 bg-yellow-400 text-purple-900 px-2 py-1 rounded-md text-sm font-bold;
+}
+
+/* Animations for kids */
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s infinite;
+}
+
+/* Large touch-friendly elements */
+.touch-friendly {
+  @apply min-h-[60px] min-w-[60px];
+}
+
+/* High contrast for accessibility */
+.high-contrast {
+  @apply text-purple-900 bg-yellow-200 border-purple-900;
+}
+
+/* Loading spinner for kids */
+.kids-spinner {
+  @apply animate-spin rounded-full h-16 w-16 border-4 border-purple-200 border-t-purple-500;
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "apps/api/**/*.py": { "maxDuration": 60, "memory": 1536 }
+  },
+  "buildCommand": "pnpm -C apps/web build",
+  "installCommand": "pnpm i --frozen-lockfile",
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/apps/api/$1" }]
+}

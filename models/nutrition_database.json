@@ -1,0 +1,153 @@
+{
+  "apple": {
+    "name": "Apple",
+    "category": "Fruits",
+    "emoji": "🍎",
+    "nutrition": {
+      "calories": 52,
+      "protein": 0.3,
+      "carbs": 14,
+      "fat": 0.2,
+      "fiber": 2.4,
+      "sugar": 10,
+      "sodium": 1,
+      "potassium": 107,
+      "calcium": 6,
+      "iron": 0.1,
+      "vitaminC": 4.6,
+      "vitaminA": 54
+    },
+    "benefits": [
+      "Rich in fiber for healthy digestion",
+      "Contains antioxidants for strong immunity",
+      "Good source of vitamin C",
+      "Helps keep teeth clean and healthy"
+    ],
+    "kidFriendly": {
+      "description": "Crunchy and sweet! Apples help keep your teeth strong and your tummy happy!",
+      "funFact": "An apple a day keeps the doctor away! 🏥",
+      "healthScore": 9
+    }
+  },
+  "banana": {
+    "name": "Banana",
+    "category": "Fruits",
+    "emoji": "🍌",
+    "nutrition": {
+      "calories": 89,
+      "protein": 1.1,
+      "carbs": 23,
+      "fat": 0.3,
+      "fiber": 2.6,
+      "sugar": 12,
+      "sodium": 1,
+      "potassium": 358,
+      "calcium": 5,
+      "iron": 0.3,
+      "vitaminC": 8.7,
+      "vitaminB6": 0.4
+    },
+    "benefits": [
+      "High in potassium for heart health",
+      "Natural energy boost from healthy sugars",
+      "Good source of vitamin B6",
+      "Contains fiber for digestion"
+    ],
+    "kidFriendly": {
+      "description": "Sweet and creamy! Bananas give you energy to play and run around!",
+      "funFact": "Bananas are berries, but strawberries are not! 🤯",
+      "healthScore": 8
+    }
+  },
+  "orange": {
+    "name": "Orange",
+    "category": "Fruits",
+    "emoji": "🍊",
+    "nutrition": {
+      "calories": 47,
+      "protein": 0.9,
+      "carbs": 12,
+      "fat": 0.1,
+      "fiber": 2.4,
+      "sugar": 9,
+      "sodium": 0,
+      "potassium": 181,
+      "calcium": 40,
+      "iron": 0.1,
+      "vitaminC": 53,
+      "folate": 40
+    },
+    "benefits": [
+      "Excellent source of vitamin C",
+      "Boosts immune system",
+      "Contains folate for healthy growth",
+      "Rich in antioxidants"
+    ],
+    "kidFriendly": {
+      "description": "Juicy and tangy! Oranges help fight off germs and keep you healthy!",
+      "funFact": "One orange has more vitamin C than you need for the whole day! 💪",
+      "healthScore": 9
+    }
+  },
+  "broccoli": {
+    "name": "Broccoli",
+    "category": "Vegetables",
+    "emoji": "🥦",
+    "nutrition": {
+      "calories": 34,
+      "protein": 2.8,
+      "carbs": 7,
+      "fat": 0.4,
+      "fiber": 2.6,
+      "sugar": 1.5,
+      "sodium": 33,
+      "potassium": 316,
+      "calcium": 47,
+      "iron": 0.7,
+      "vitaminC": 89,
+      "vitaminK": 102,
+      "folate": 63
+    },
+    "benefits": [
+      "Super high in vitamin C and K",
+      "Contains powerful antioxidants",
+      "Good source of fiber and protein",
+      "Supports bone health with calcium"
+    ],
+    "kidFriendly": {
+      "description": "Like tiny green trees! Broccoli makes you super strong like a superhero!",
+      "funFact": "Broccoli has more vitamin C than oranges! 🦸‍♂️",
+      "healthScore": 10
+    }
+  },
+  "carrot": {
+    "name": "Carrot",
+    "category": "Vegetables",
+    "emoji": "🥕",
+    "nutrition": {
+      "calories": 41,
+      "protein": 0.9,
+      "carbs": 10,
+      "fat": 0.2,
+      "fiber": 2.8,
+      "sugar": 4.7,
+      "sodium": 69,
+      "potassium": 320,
+      "calcium": 33,
+      "iron": 0.3,
+      "vitaminA": 835,
+      "vitaminC": 5.9
+    },
+    "benefits": [
+      "Extremely high in vitamin A for eye health",
+      "Contains beta-carotene antioxidants",
+      "Good source of fiber",
+      "Supports healthy vision"
+    ],
+    "kidFriendly": {
+      "description": "Orange and crunchy! Carrots help you see better, especially at night!",
+      "funFact": "Eating carrots really can help you see in the dark! 👀",
+      "healthScore": 9
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "safe_objects": [
+    "teddy bear",
+    "sports ball",
+    "kite",
+    "frisbee",
+    "book",
+    "laptop",
+    "keyboard",
+    "chair",
+    "couch",
+    "bed",
+    "dining table",
+    "cat",
+    "dog",
+    "bird",
+    "horse",
+    "car",
+    "truck",
+    "bus",
+    "bicycle",
+    "airplane",
+    "apple",
+    "banana",
+    "orange",
+    "broccoli",
+    "carrot",
+    "pizza",
+    "cake"
+  ],
+  "supervised_objects": [],
+  "restricted_objects": [
+    "knife",
+    "scissors",
+    "microwave",
+    "oven",
+    "toaster",
+    "wine glass",
+    "bottle"
+  ],
+  "safety_guidelines": {
+    "toys": {
+      "supervision_level": "minimal",
+      "age_appropriate": "3+",
+      "safety_notes": "Generally safe toys for children"
+    },
+    "educational": {
+      "supervision_level": "minimal",
+      "age_appropriate": "3+",
+      "safety_notes": "Generally safe educational for children"
+    },
+    "household_safe": {
+      "supervision_level": "minimal",
+      "age_appropriate": "3+",
+      "safety_notes": "Generally safe household_safe for children"
+    },
+    "animals": {
+      "supervision_level": "minimal",
+      "age_appropriate": "3+",
+      "safety_notes": "Generally safe animals for children"
+    },
+    "vehicles": {
+      "supervision_level": "minimal",
+      "age_appropriate": "3+",
+      "safety_notes": "Generally safe vehicles for children"
+    },
+    "food": {
+      "supervision_level": "minimal",
+      "age_appropriate": "3+",
+      "safety_notes": "Generally safe food for children"
+    },
+    "sharp_objects": {
+      "supervision_level": "required",
+      "age_appropriate": "12+",
+      "safety_notes": "Requires adult supervision: sharp_objects"
+    },
+    "electrical": {
+      "supervision_level": "required",
+      "age_appropriate": "12+",
+      "safety_notes": "Requires adult supervision: electrical"
+    },
+    "potentially_unsafe": {
+      "supervision_level": "required",
+      "age_appropriate": "12+",
+      "safety_notes": "Requires adult supervision: potentially_unsafe"
+    }
+  }
+}
