@@ -4,10 +4,11 @@
   "description": "A child-friendly object detection application",
   "private": true,
   "scripts": {
-    "dev": "pnpm -C apps/web dev",
-    "build": "pnpm -C apps/web build",
-    "preview": "pnpm -C apps/web preview",
-    "lint": "pnpm -C apps/web lint"
+    "dev": "cd apps/web && npm run dev",
+    "build": "cd apps/web && npm run build",
+    "preview": "cd apps/web && npm run preview",
+    "lint": "cd apps/web && npm run lint",
+    "install": "npm install --legacy-peer-deps"
   },
   "workspaces": [
     "apps/*"
