@@ -46,17 +46,22 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-white rounded-full p-1 shadow-md group-hover:scale-110 transition-transform duration-200">
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="w-12 h-12 bg-white rounded-xl p-2 shadow-lg group-hover:scale-105 transition-all duration-300 border-2 border-purple-200">
               <img 
-                src="/logo.svg" 
+                src="/logo.svg?v=2" 
                 alt="Kids B-Care Logo" 
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Kids B-Care
-            </span>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Kids B-Care
+              </span>
+              <span className="text-xs text-purple-500 font-medium">
+                Nutrition AI for Kids
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

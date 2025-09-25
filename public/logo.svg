@@ -1,78 +1,53 @@
-<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle -->
-  <circle cx="100" cy="100" r="90" fill="url(#bgGradient)" opacity="0.1"/>
-  
-  <!-- Main gradient definitions -->
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#E0E7FF"/>
-      <stop offset="50%" style="stop-color:#F3E8FF"/>
-      <stop offset="100%" style="stop-color:#FEF3E2"/>
+    <!-- Main gradient like the original image -->
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00BFFF"/>
+      <stop offset="50%" style="stop-color:#FF1493"/>
+      <stop offset="100%" style="stop-color:#FFD700"/>
     </linearGradient>
     
-    <linearGradient id="kGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#60A5FA"/>
-      <stop offset="30%" style="stop-color:#EC4899"/>
-      <stop offset="60%" style="stop-color:#FBBF24"/>
-      <stop offset="100%" style="stop-color:#EC4899"/>
-    </linearGradient>
-    
-    <linearGradient id="kInner" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#BFDBFE"/>
-      <stop offset="50%" style="stop-color:#F3E8FF"/>
-      <stop offset="100%" style="stop-color:#FEF3C7"/>
+    <!-- Inner gradient -->
+    <linearGradient id="innerGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00CED1"/>
+      <stop offset="50%" style="stop-color:#FF69B4"/>
+      <stop offset="100%" style="stop-color:#FFFF00"/>
     </linearGradient>
   </defs>
   
-  <!-- Decorative stars -->
-  <g opacity="0.8">
-    <!-- Star 1 -->
-    <polygon points="40,50 44,38 48,50 60,46 48,54 44,66 40,54 28,46" 
-             fill="#FBBF24" transform="rotate(15 44 52)"/>
-    <!-- Star 2 -->
-    <polygon points="150,40 154,28 158,40 170,36 158,44 154,56 150,44 138,36" 
-             fill="#FBBF24" transform="rotate(-15 154 42)"/>
-    <!-- Star 3 -->
-    <polygon points="160,160 162,154 164,160 170,158 164,162 162,168 160,162 154,158" 
-             fill="#EC4899"/>
+  <!-- Background with soft gradient -->
+  <circle cx="50" cy="50" r="48" fill="#F8F9FA" opacity="0.9"/>
+  
+  <!-- Main letter K with 3D effect like original -->
+  <g transform="translate(50, 50)">
+    <!-- Shadow -->
+    <path d="M -13 -18 L -13 18 L -6 18 L -6 2 L 2 18 L 11 18 L -1 0 L 13 -18 L 4 -18 L -6 -6 L -6 -18 Z" 
+          fill="#000000" opacity="0.1" transform="translate(2, 2)"/>
+    
+    <!-- Main K shape -->
+    <path d="M -15 -20 L -15 20 L -8 20 L -8 2 L 0 20 L 9 20 L -3 0 L 11 -20 L 2 -20 L -8 -8 L -8 -20 Z" 
+          fill="url(#mainGrad)" stroke="url(#innerGrad)" stroke-width="1"/>
+    
+    <!-- Inner highlight -->
+    <path d="M -12 -17 L -12 17 L -10 17 L -10 -2 L -2 12 L 3 12 L -5 2 L 6 -17 L 1 -17 L -10 -12 L -10 -17 Z" 
+          fill="url(#innerGrad)" opacity="0.6"/>
   </g>
   
-  <!-- Cloud decorations -->
-  <g opacity="0.6">
-    <!-- Cloud 1 -->
-    <ellipse cx="35" cy="140" rx="12" ry="8" fill="#BFDBFE"/>
-    <ellipse cx="42" cy="136" rx="8" ry="6" fill="#BFDBFE"/>
-    <ellipse cx="48" cy="140" rx="10" ry="7" fill="#BFDBFE"/>
-    
-    <!-- Cloud 2 (smaller) -->
-    <ellipse cx="165" cy="110" rx="8" ry="5" fill="#BFDBFE"/>
-    <ellipse cx="170" cy="108" rx="6" ry="4" fill="#BFDBFE"/>
-    <ellipse cx="174" cy="110" rx="7" ry="5" fill="#BFDBFE"/>
+  <!-- Decorative elements like original -->
+  <g opacity="0.7">
+    <!-- Yellow star top left -->
+    <path d="M 20 20 L 22 16 L 24 20 L 28 18 L 24 22 L 22 26 L 20 22 L 16 18 Z" 
+          fill="#FFD700"/>
+    <!-- Pink star top right -->
+    <path d="M 75 25 L 77 21 L 79 25 L 83 23 L 79 27 L 77 31 L 75 27 L 71 23 Z" 
+          fill="#FF1493"/>
+    <!-- Blue dot bottom -->
+    <circle cx="80" cy="80" r="2" fill="#00BFFF"/>
   </g>
   
-  <!-- Main letter K -->
-  <g transform="translate(100, 100)">
-    <!-- K outer stroke -->
-    <path d="M -35 -45 L -35 45 L -20 45 L -20 5 L 5 45 L 25 45 L -5 0 L 30 -45 L 8 -45 L -20 -10 L -20 -45 Z" 
-          fill="url(#kGradient)" 
-          stroke="#FFFFFF" 
-          stroke-width="3"/>
-    
-    <!-- K inner highlight -->
-    <path d="M -30 -40 L -30 40 L -25 40 L -25 0 L 0 35 L 15 35 L -10 -5 L 20 -40 L 5 -40 L -25 -15 L -25 -40 Z" 
-          fill="url(#kInner)" 
-          opacity="0.7"/>
-    
-    <!-- Yellow accent circles -->
-    <circle cx="20" cy="-25" r="8" fill="#FBBF24" opacity="0.8"/>
-    <circle cx="-15" cy="25" r="6" fill="#FBBF24" opacity="0.6"/>
-  </g>
-  
-  <!-- Additional decorative elements -->
-  <g opacity="0.4">
-    <!-- Small dots -->
-    <circle cx="70" cy="170" r="3" fill="#EC4899"/>
-    <circle cx="130" cy="30" r="2" fill="#60A5FA"/>
-    <circle cx="30" cy="80" r="2" fill="#FBBF24"/>
+  <!-- Subtle cloud element -->
+  <g opacity="0.3">
+    <ellipse cx="20" cy="75" rx="6" ry="3" fill="#87CEEB"/>
+    <ellipse cx="25" cy="73" rx="4" ry="2" fill="#87CEEB"/>
   </g>
 </svg>
