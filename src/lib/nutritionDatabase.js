@@ -160,6 +160,228 @@ export const NUTRITION_DATABASE = {
     }
   },
 
+  // Indonesian Foods
+  'nasi': {
+    name: 'Nasi Putih',
+    category: 'Grains',
+    emoji: '🍚',
+    nutrition: {
+      calories: 130,
+      protein: 2.7,
+      carbs: 28,
+      fat: 0.3,
+      fiber: 0.4,
+      sugar: 0.1,
+      sodium: 1,
+      potassium: 55,
+      calcium: 28,
+      iron: 0.8,
+      vitaminB1: 0.1,
+      vitaminB3: 1.6
+    },
+    benefits: [
+      'Sumber energi utama dari karbohidrat',
+      'Mengandung vitamin B untuk metabolisme',
+      'Mudah dicerna oleh anak-anak',
+      'Cocok dikombinasikan dengan lauk sehat'
+    ],
+    kidFriendly: {
+      description: 'Makanan pokok yang memberikan energi untuk main dan belajar!',
+      funFact: 'Nasi adalah makanan pokok lebih dari setengah penduduk dunia! 🌏',
+      healthScore: 7
+    }
+  },
+
+  'ayam': {
+    name: 'Ayam',
+    category: 'Protein',
+    emoji: '🍗',
+    nutrition: {
+      calories: 165,
+      protein: 31,
+      carbs: 0,
+      fat: 3.6,
+      fiber: 0,
+      sugar: 0,
+      sodium: 74,
+      potassium: 256,
+      calcium: 11,
+      iron: 0.9,
+      vitaminB6: 0.5,
+      vitaminB12: 0.3
+    },
+    benefits: [
+      'Protein tinggi untuk pertumbuhan otot',
+      'Sumber vitamin B yang baik',
+      'Rendah lemak jenuh',
+      'Mengandung mineral penting'
+    ],
+    kidFriendly: {
+      description: 'Protein hebat untuk tumbuh kuat dan sehat!',
+      funFact: 'Ayam adalah salah satu sumber protein terbaik untuk anak-anak! 💪',
+      healthScore: 9
+    }
+  },
+
+  'ikan': {
+    name: 'Ikan',
+    category: 'Protein',
+    emoji: '🐟',
+    nutrition: {
+      calories: 206,
+      protein: 22,
+      carbs: 0,
+      fat: 12,
+      fiber: 0,
+      sugar: 0,
+      sodium: 59,
+      potassium: 363,
+      calcium: 16,
+      iron: 0.2,
+      omega3: 1.8,
+      vitaminD: 10.9
+    },
+    benefits: [
+      'Kaya omega-3 untuk perkembangan otak',
+      'Protein berkualitas tinggi',
+      'Sumber vitamin D alami',
+      'Baik untuk kesehatan jantung'
+    ],
+    kidFriendly: {
+      description: 'Makanan pintar yang membuat otak cerdas!',
+      funFact: 'Ikan mengandung omega-3 yang membuat otak jadi super pintar! 🧠',
+      healthScore: 10
+    }
+  },
+
+  'tempe': {
+    name: 'Tempe',
+    category: 'Protein',
+    emoji: '🟤',
+    nutrition: {
+      calories: 193,
+      protein: 19,
+      carbs: 9,
+      fat: 11,
+      fiber: 9,
+      sugar: 0,
+      sodium: 9,
+      potassium: 412,
+      calcium: 111,
+      iron: 2.7,
+      vitaminB12: 0.1,
+      folate: 24
+    },
+    benefits: [
+      'Protein nabati lengkap',
+      'Tinggi serat untuk pencernaan',
+      'Sumber probiotik alami',
+      'Kaya mineral dan vitamin'
+    ],
+    kidFriendly: {
+      description: 'Makanan tradisional Indonesia yang sangat bergizi!',
+      funFact: 'Tempe dibuat dari kedelai yang difermentasi selama 2-3 hari! 🇮🇩',
+      healthScore: 9
+    }
+  },
+
+  'tahu': {
+    name: 'Tahu',
+    category: 'Protein',
+    emoji: '⬜',
+    nutrition: {
+      calories: 76,
+      protein: 8,
+      carbs: 1.9,
+      fat: 4.8,
+      fiber: 0.3,
+      sugar: 0.6,
+      sodium: 7,
+      potassium: 121,
+      calcium: 350,
+      iron: 5.4,
+      magnesium: 37,
+      zinc: 0.8
+    },
+    benefits: [
+      'Protein nabati berkualitas',
+      'Sangat tinggi kalsium',
+      'Rendah kalori',
+      'Mudah dicerna anak'
+    ],
+    kidFriendly: {
+      description: 'Putih lembut dan penuh kalsium untuk tulang kuat!',
+      funFact: 'Tahu mengandung kalsium lebih banyak dari susu! 🦴',
+      healthScore: 8
+    }
+  },
+
+  'sayur': {
+    name: 'Sayuran Hijau',
+    category: 'Vegetables',
+    emoji: '🥬',
+    nutrition: {
+      calories: 23,
+      protein: 2.9,
+      carbs: 4.6,
+      fat: 0.4,
+      fiber: 2.6,
+      sugar: 2.3,
+      sodium: 28,
+      potassium: 558,
+      calcium: 99,
+      iron: 1.5,
+      vitaminA: 469,
+      vitaminC: 30,
+      vitaminK: 483,
+      folate: 194
+    },
+    benefits: [
+      'Sangat tinggi vitamin A dan C',
+      'Kaya folat untuk pertumbuhan',
+      'Tinggi serat dan rendah kalori',
+      'Antioksidan untuk daya tahan tubuh'
+    ],
+    kidFriendly: {
+      description: 'Sayuran hijau membuat mata tajam dan tubuh sehat!',
+      funFact: 'Sayuran hijau mengandung klorofil yang membuat tanaman berwarna hijau! 🌱',
+      healthScore: 10
+    }
+  },
+
+  'telur': {
+    name: 'Telur',
+    category: 'Protein',
+    emoji: '🥚',
+    nutrition: {
+      calories: 155,
+      protein: 13,
+      carbs: 1.1,
+      fat: 11,
+      fiber: 0,
+      sugar: 1.1,
+      sodium: 124,
+      potassium: 138,
+      calcium: 50,
+      iron: 1.2,
+      vitaminA: 149,
+      vitaminB12: 1.1,
+      vitaminD: 20,
+      choline: 294
+    },
+    benefits: [
+      'Protein lengkap dengan semua asam amino',
+      'Kaya kolin untuk perkembangan otak',
+      'Sumber vitamin D alami',
+      'Mudah diolah dan dicerna'
+    ],
+    kidFriendly: {
+      description: 'Makanan super yang mengandung semua nutrisi penting!',
+      funFact: 'Telur mengandung semua vitamin kecuali vitamin C! 🌟',
+      healthScore: 9
+    }
+  },
+
   // Proteins
   'hot dog': {
     name: 'Hot Dog',
