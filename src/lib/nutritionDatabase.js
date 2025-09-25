@@ -349,6 +349,109 @@ export const NUTRITION_DATABASE = {
     }
   },
 
+  'sosis': {
+    name: 'Sosis',
+    category: 'Processed Meat',
+    emoji: '🌭',
+    nutrition: {
+      calories: 301,
+      protein: 12,
+      carbs: 2,
+      fat: 27,
+      fiber: 0,
+      sugar: 1.2,
+      sodium: 1047,
+      potassium: 204,
+      calcium: 11,
+      iron: 1.4,
+      vitaminB12: 1.5,
+      zinc: 2.4
+    },
+    benefits: [
+      'Sumber protein untuk pertumbuhan',
+      'Mengandung vitamin B12',
+      'Sumber energi cepat'
+    ],
+    concerns: [
+      'Tinggi sodium - batasi konsumsi',
+      'Tinggi lemak jenuh',
+      'Makanan olahan - konsumsi sesekali'
+    ],
+    kidFriendly: {
+      description: 'Sosis enak tapi harus dimakan sedikit karena banyak garam!',
+      funFact: 'Sosis pertama dibuat di Jerman lebih dari 500 tahun lalu! 🇩🇪',
+      healthScore: 3
+    }
+  },
+
+  'telur mata sapi': {
+    name: 'Telur Mata Sapi',
+    category: 'Protein',
+    emoji: '🍳',
+    nutrition: {
+      calories: 196,
+      protein: 14,
+      carbs: 0.8,
+      fat: 15,
+      fiber: 0,
+      sugar: 0.8,
+      sodium: 207,
+      potassium: 138,
+      calcium: 56,
+      iron: 1.8,
+      vitaminA: 184,
+      vitaminB12: 1.3,
+      vitaminD: 41,
+      choline: 294
+    },
+    benefits: [
+      'Protein berkualitas tinggi dengan semua asam amino',
+      'Kaya kolin untuk perkembangan otak',
+      'Sumber vitamin D alami',
+      'Mudah dicerna dan bergizi tinggi'
+    ],
+    kidFriendly: {
+      description: 'Telur mata sapi mengandung semua nutrisi penting untuk tumbuh pintar dan kuat!',
+      funFact: 'Kuning telur mengandung hampir semua vitamin yang dibutuhkan tubuh! 🧠',
+      healthScore: 9
+    }
+  },
+
+  'susu coklat': {
+    name: 'Susu Coklat',
+    category: 'Dairy',
+    emoji: '🥛',
+    nutrition: {
+      calories: 83,
+      protein: 3.4,
+      carbs: 12,
+      fat: 2.5,
+      fiber: 0.4,
+      sugar: 11,
+      sodium: 59,
+      potassium: 197,
+      calcium: 118,
+      iron: 0.3,
+      vitaminD: 1.3,
+      vitaminB12: 0.5
+    },
+    benefits: [
+      'Kalsium tinggi untuk tulang dan gigi kuat',
+      'Protein berkualitas untuk pertumbuhan',
+      'Sumber energi dari karbohidrat',
+      'Mengandung vitamin D dan B12'
+    ],
+    concerns: [
+      'Tinggi gula tambahan',
+      'Kalori lebih tinggi dari susu biasa'
+    ],
+    kidFriendly: {
+      description: 'Susu coklat enak dan bergizi, tapi jangan terlalu sering karena manis!',
+      funFact: 'Susu coklat ditemukan oleh apoteker Irlandia pada tahun 1828! 🍫',
+      healthScore: 6
+    }
+  },
+
   'telur': {
     name: 'Telur',
     category: 'Protein',
