@@ -619,6 +619,542 @@ export const NUTRITION_DATABASE = {
     }
   },
 
+  // Indonesian Traditional Foods
+  'gado-gado': {
+    name: 'Gado-Gado',
+    category: 'Indonesian Food',
+    emoji: '🥗',
+    nutrition: {
+      calories: 165,
+      protein: 8.5,
+      carbs: 15,
+      fat: 8.2,
+      fiber: 4.5,
+      sugar: 3.2,
+      sodium: 420,
+      potassium: 385,
+      calcium: 95,
+      iron: 2.1,
+      vitaminA: 285,
+      vitaminC: 15
+    },
+    benefits: [
+      'Kaya sayuran dan protein nabati',
+      'Tinggi serat untuk pencernaan',
+      'Sumber vitamin A dan C',
+      'Makanan tradisional bergizi seimbang'
+    ],
+    kidFriendly: {
+      description: 'Salad Indonesia yang segar dengan sayuran dan bumbu kacang enak!',
+      funFact: 'Gado-gado artinya "campuran" dalam bahasa Indonesia! 🇮🇩',
+      healthScore: 8
+    }
+  },
+
+  'rendang': {
+    name: 'Rendang',
+    category: 'Indonesian Food',
+    emoji: '🍛',
+    nutrition: {
+      calories: 280,
+      protein: 25,
+      carbs: 8,
+      fat: 16,
+      fiber: 1.2,
+      sugar: 2.1,
+      sodium: 650,
+      potassium: 420,
+      calcium: 25,
+      iron: 3.8,
+      vitaminB12: 2.1,
+      zinc: 4.2
+    },
+    benefits: [
+      'Protein hewani berkualitas tinggi',
+      'Kaya rempah antioksidan',
+      'Sumber zat besi dan zinc',
+      'Makanan tradisional khas Padang'
+    ],
+    kidFriendly: {
+      description: 'Daging sapi dengan bumbu rempah yang kaya, enak dan bergizi!',
+      funFact: 'Rendang adalah makanan terenak di dunia versi CNN! 🏆',
+      healthScore: 7
+    }
+  },
+
+  'soto': {
+    name: 'Soto',
+    category: 'Indonesian Food', 
+    emoji: '🍲',
+    nutrition: {
+      calories: 185,
+      protein: 15,
+      carbs: 12,
+      fat: 8,
+      fiber: 2.1,
+      sugar: 2.8,
+      sodium: 890,
+      potassium: 315,
+      calcium: 45,
+      iron: 2.2,
+      vitaminC: 8,
+      vitaminB6: 0.3
+    },
+    benefits: [
+      'Sup hangat yang menyehatkan',
+      'Protein dari daging dan telur',
+      'Rempah untuk daya tahan tubuh',
+      'Mudah dicerna anak'
+    ],
+    kidFriendly: {
+      description: 'Sup ayam Indonesia yang hangat dan menyehatkan!',
+      funFact: 'Setiap daerah di Indonesia punya soto dengan cita rasa berbeda! 🌴',
+      healthScore: 7
+    }
+  },
+
+  'gudeg': {
+    name: 'Gudeg',
+    category: 'Indonesian Food',
+    emoji: '🍛',
+    nutrition: {
+      calories: 195,
+      protein: 8,
+      carbs: 25,
+      fat: 7,
+      fiber: 5.2,
+      sugar: 18,
+      sodium: 420,
+      potassium: 380,
+      calcium: 85,
+      iron: 1.8,
+      vitaminA: 125,
+      folate: 35
+    },
+    benefits: [
+      'Sumber karbohidrat dari nangka muda',
+      'Tinggi serat untuk pencernaan',
+      'Kaya antioksidan dari rempah',
+      'Makanan tradisional Yogyakarta'
+    ],
+    kidFriendly: {
+      description: 'Masakan manis dari nangka muda, khas Yogyakarta yang lezat!',
+      funFact: 'Gudeg dimasak hingga 12 jam agar empuk dan bumbu meresap! ⏰',
+      healthScore: 6
+    }
+  },
+
+  'bakso': {
+    name: 'Bakso',
+    category: 'Indonesian Food',
+    emoji: '🍜',
+    nutrition: {
+      calories: 165,
+      protein: 12,
+      carbs: 8,
+      fat: 9,
+      fiber: 0.8,
+      sugar: 1.5,
+      sodium: 780,
+      potassium: 245,
+      calcium: 35,
+      iron: 1.5,
+      vitaminB12: 0.8,
+      zinc: 2.1
+    },
+    benefits: [
+      'Protein dari daging sapi',
+      'Sup hangat menyehatkan',
+      'Mengandung vitamin B12'
+    ],
+    kidFriendly: {
+      description: 'Bola daging dalam kuah hangat yang enak dan mengenyangkan!',
+      funFact: 'Bakso berasal dari adaptasi makanan Tionghoa di Indonesia! 🍜',
+      healthScore: 6
+    }
+  },
+
+  'mie ayam': {
+    name: 'Mie Ayam',
+    category: 'Indonesian Food',
+    emoji: '🍝',
+    nutrition: {
+      calories: 285,
+      protein: 18,
+      carbs: 35,
+      fat: 8,
+      fiber: 2.1,
+      sugar: 3.2,
+      sodium: 720,
+      potassium: 285,
+      calcium: 45,
+      iron: 2.8,
+      vitaminB1: 0.2,
+      vitaminB6: 0.4
+    },
+    benefits: [
+      'Karbohidrat untuk energi',
+      'Protein dari ayam',
+      'Sumber vitamin B kompleks'
+    ],
+    kidFriendly: {
+      description: 'Mie dengan ayam dan sayuran, makanan favorit anak Indonesia!',
+      funFact: 'Mie ayam sudah ada di Indonesia sejak zaman kolonial! 🏛️',
+      healthScore: 7
+    }
+  },
+
+  'nasi gudeg': {
+    name: 'Nasi Gudeg',
+    category: 'Indonesian Food',
+    emoji: '🍛',
+    nutrition: {
+      calories: 385,
+      protein: 15,
+      carbs: 55,
+      fat: 12,
+      fiber: 6.8,
+      sugar: 22,
+      sodium: 580,
+      potassium: 445,
+      calcium: 125,
+      iron: 3.2,
+      vitaminA: 165,
+      folate: 45
+    },
+    benefits: [
+      'Kombinasi karbohidrat dan protein',
+      'Tinggi serat dari nangka',
+      'Rempah tradisional antioksidan'
+    ],
+    kidFriendly: {
+      description: 'Nasi dengan gudeg manis, makanan lengkap dan mengenyangkan!',
+      funFact: 'Gudeg adalah makanan kebanggaan Kota Yogyakarta! 👑',
+      healthScore: 7
+    }
+  },
+
+  // Western Foods
+  'sandwich': {
+    name: 'Sandwich',
+    category: 'Western Food',
+    emoji: '🥪',
+    nutrition: {
+      calories: 225,
+      protein: 12,
+      carbs: 28,
+      fat: 8,
+      fiber: 3.5,
+      sugar: 4.2,
+      sodium: 520,
+      potassium: 185,
+      calcium: 85,
+      iron: 2.1,
+      vitaminC: 12,
+      folate: 35
+    },
+    benefits: [
+      'Kombinasi karbohidrat dan protein',
+      'Serat dari roti gandum',
+      'Vitamin dari sayuran'
+    ],
+    kidFriendly: {
+      description: 'Roti isi dengan sayur dan daging, praktis dan bergizi!',
+      funFact: 'Sandwich dinamai dari Earl of Sandwich di Inggris! 🇬🇧',
+      healthScore: 7
+    }
+  },
+
+  'kerupuk': {
+    name: 'Kerupuk',
+    category: 'Snacks',
+    emoji: '🍘',
+    nutrition: {
+      calories: 544,
+      protein: 8,
+      carbs: 52,
+      fat: 32,
+      fiber: 1.2,
+      sugar: 1.8,
+      sodium: 420,
+      potassium: 85,
+      calcium: 25,
+      iron: 1.2
+    },
+    benefits: [
+      'Sumber energi cepat',
+      'Protein dari udang/ikan'
+    ],
+    concerns: [
+      'Tinggi kalori dan lemak',
+      'Digoreng - konsumsi terbatas'
+    ],
+    kidFriendly: {
+      description: 'Camilan renyah yang enak, tapi jangan terlalu banyak ya!',
+      funFact: 'Kerupuk dibuat dari tepung tapioka dan essence udang! 🦐',
+      healthScore: 4
+    }
+  },
+
+  'bubur ayam': {
+    name: 'Bubur Ayam',
+    category: 'Indonesian Food',
+    emoji: '🍚',
+    nutrition: {
+      calories: 125,
+      protein: 8,
+      carbs: 18,
+      fat: 2.5,
+      fiber: 0.8,
+      sugar: 1.2,
+      sodium: 480,
+      potassium: 185,
+      calcium: 35,
+      iron: 1.2,
+      vitaminB6: 0.2
+    },
+    benefits: [
+      'Mudah dicerna untuk anak',
+      'Protein dari ayam',
+      'Karbohidrat lembut'
+    ],
+    kidFriendly: {
+      description: 'Bubur lembut dengan ayam, perfect untuk sarapan atau saat sakit!',
+      funFact: 'Bubur ayam adalah comfort food favorit anak Indonesia! 🏠',
+      healthScore: 8
+    }
+  },
+
+  // Fruits Extended
+  'mangga': {
+    name: 'Mangga',
+    category: 'Fruits',
+    emoji: '🥭',
+    nutrition: {
+      calories: 65,
+      protein: 0.8,
+      carbs: 17,
+      fat: 0.4,
+      fiber: 1.8,
+      sugar: 14,
+      sodium: 2,
+      potassium: 156,
+      calcium: 10,
+      iron: 0.1,
+      vitaminA: 765,
+      vitaminC: 27,
+      folate: 14
+    },
+    benefits: [
+      'Sangat tinggi vitamin A dan C',
+      'Antioksidan untuk daya tahan tubuh',
+      'Serat untuk pencernaan',
+      'Buah tropis kaya nutrisi'
+    ],
+    kidFriendly: {
+      description: 'Buah manis dan juicy yang kaya vitamin untuk mata dan kulit sehat!',
+      funFact: 'Mangga adalah buah nasional India, Pakistan, dan Filipina! 🌏',
+      healthScore: 9
+    }
+  },
+
+  'pepaya': {
+    name: 'Pepaya',
+    category: 'Fruits',
+    emoji: '🧡',
+    nutrition: {
+      calories: 39,
+      protein: 0.6,
+      carbs: 10,
+      fat: 0.1,
+      fiber: 1.8,
+      sugar: 6,
+      sodium: 3,
+      potassium: 182,
+      calcium: 24,
+      iron: 0.1,
+      vitaminA: 328,
+      vitaminC: 61,
+      folate: 38
+    },
+    benefits: [
+      'Super tinggi vitamin C',
+      'Enzim papain untuk pencernaan',
+      'Antioksidan lycopene',
+      'Rendah kalori, tinggi nutrisi'
+    ],
+    kidFriendly: {
+      description: 'Buah orange yang manis dan baik untuk pencernaan!',
+      funFact: 'Pepaya mengandung enzim yang membantu mencerna protein! 🧬',
+      healthScore: 9
+    }
+  },
+
+  // Vegetables Extended
+  'kangkung': {
+    name: 'Kangkung',
+    category: 'Vegetables',
+    emoji: '🥬',
+    nutrition: {
+      calories: 19,
+      protein: 2.6,
+      carbs: 3.1,
+      fat: 0.2,
+      fiber: 2.1,
+      sugar: 1.8,
+      sodium: 113,
+      potassium: 312,
+      calcium: 67,
+      iron: 1.7,
+      vitaminA: 315,
+      vitaminC: 55,
+      folate: 57
+    },
+    benefits: [
+      'Tinggi vitamin A untuk mata',
+      'Kaya zat besi mencegah anemia',
+      'Serat tinggi untuk pencernaan',
+      'Sayuran lokal mudah didapat'
+    ],
+    kidFriendly: {
+      description: 'Sayur hijau yang renyah dan kaya zat besi untuk darah sehat!',
+      funFact: 'Kangkung bisa tumbuh di air dan di darat! 💧🌱',
+      healthScore: 9
+    }
+  },
+
+  'bayam': {
+    name: 'Bayam',
+    category: 'Vegetables',
+    emoji: '🥬',
+    nutrition: {
+      calories: 23,
+      protein: 2.9,
+      carbs: 3.6,
+      fat: 0.4,
+      fiber: 2.2,
+      sugar: 0.4,
+      sodium: 79,
+      potassium: 558,
+      calcium: 99,
+      iron: 2.7,
+      vitaminA: 469,
+      vitaminC: 28,
+      vitaminK: 483,
+      folate: 194
+    },
+    benefits: [
+      'Super tinggi zat besi',
+      'Kaya folat untuk pertumbuhan',
+      'Vitamin K untuk tulang kuat',
+      'Antioksidan lutein untuk mata'
+    ],
+    kidFriendly: {
+      description: 'Sayur hijau super yang bikin kuat seperti Popeye!',
+      funFact: 'Popeye makan bayam untuk jadi kuat karena tinggi zat besi! 💪',
+      healthScore: 10
+    }
+  },
+
+  // Rice Variations
+  'nasi goreng': {
+    name: 'Nasi Goreng',
+    category: 'Indonesian Food',
+    emoji: '🍛',
+    nutrition: {
+      calories: 215,
+      protein: 8,
+      carbs: 32,
+      fat: 6,
+      fiber: 1.2,
+      sugar: 2.5,
+      sodium: 620,
+      potassium: 125,
+      calcium: 45,
+      iron: 1.8,
+      vitaminA: 85,
+      vitaminC: 5
+    },
+    benefits: [
+      'Karbohidrat untuk energi',
+      'Protein dari telur/daging',
+      'Sayuran untuk vitamin'
+    ],
+    kidFriendly: {
+      description: 'Nasi digoreng dengan bumbu enak, makanan favorit semua orang!',
+      funFact: 'Nasi goreng Indonesia terkenal di seluruh dunia! 🌍',
+      healthScore: 6
+    }
+  },
+
+  // Fish Varieties
+  'ikan bakar': {
+    name: 'Ikan Bakar',
+    category: 'Protein',
+    emoji: '🐟',
+    nutrition: {
+      calories: 185,
+      protein: 28,
+      carbs: 0,
+      fat: 7,
+      fiber: 0,
+      sugar: 0,
+      sodium: 95,
+      potassium: 485,
+      calcium: 35,
+      iron: 0.8,
+      omega3: 2.2,
+      vitaminD: 15,
+      vitaminB12: 3.2
+    },
+    benefits: [
+      'Protein berkualitas tinggi',
+      'Omega-3 untuk perkembangan otak',
+      'Vitamin D untuk tulang',
+      'Rendah lemak jenuh'
+    ],
+    kidFriendly: {
+      description: 'Ikan panggang yang gurih dan sehat untuk otak pintar!',
+      funFact: 'Ikan laut mengandung omega-3 lebih banyak dari ikan air tawar! 🌊',
+      healthScore: 10
+    }
+  },
+
+  // Snacks Indonesian
+  'rujak': {
+    name: 'Rujak',
+    category: 'Indonesian Snacks',
+    emoji: '🍇',
+    nutrition: {
+      calories: 85,
+      protein: 1.2,
+      carbs: 22,
+      fat: 0.3,
+      fiber: 4.5,
+      sugar: 16,
+      sodium: 285,
+      potassium: 385,
+      calcium: 45,
+      iron: 0.8,
+      vitaminA: 145,
+      vitaminC: 35
+    },
+    benefits: [
+      'Kaya vitamin C dari buah segar',
+      'Serat tinggi dari buah',
+      'Antioksidan alami'
+    ],
+    concerns: [
+      'Tinggi gula dari bumbu',
+      'Sodium tinggi dari garam'
+    ],
+    kidFriendly: {
+      description: 'Buah segar dengan bumbu pedas manis, segar dan sehat!',
+      funFact: 'Rujak adalah camilan sehat asli Indonesia! 🇮🇩',
+      healthScore: 7
+    }
+  },
+
   // Sweets
   'cake': {
     name: 'Cake',
