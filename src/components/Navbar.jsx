@@ -8,9 +8,11 @@ import {
   Home,
   Menu,
   X,
-  Baby
+  Baby,
+  User
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import { useAppContext } from '../App'
 
 const Navbar = () => {
@@ -27,10 +29,7 @@ const Navbar = () => {
   ]
 
   const toggleUserMode = () => {
-    const modes = ['kid', 'parent', 'admin']
-    const currentIndex = modes.indexOf(userMode)
-    const nextIndex = (currentIndex + 1) % modes.length
-    setUserMode(modes[nextIndex])
+    setUserMode(userMode === 'kid' ? 'parent' : 'kid')
   }
 
   const getModeColor = () => {
@@ -88,13 +87,34 @@ const Navbar = () => {
           {/* User Mode Toggle & Mobile Menu */}
           <div className="flex items-center space-x-2">
             {/* User Mode Toggle */}
-            <Button
-              onClick={toggleUserMode}
-              className={`${getModeColor()} text-white font-bold px-4 py-2 rounded-full hover:scale-105 transition-all duration-200 shadow-lg`}
-              size="sm"
-            >
-              {userMode.charAt(0).toUpperCase() + userMode.slice(1)} Mode
-            </Button>
+            <div className="flex items-center bg-white/90 rounded-full p-1 shadow-md">
+              <Button
+                variant={userMode === 'kid' ? 'default' : 'ghost'}
+                size="sm"
+                onClick={() => setUserMode('kid')}
+                className={`rounded-full px-3 py-1 text-sm font-medium transition-all ${
+                  userMode === 'kid' 
+                    ? 'bg-purple-500 text-white shadow-sm' 
+                    : 'text-purple-600 hover:bg-purple-50'
+                }`}
+              >
+                <Baby className="w-4 h-4 mr-1" />
+                Kid
+              </Button>
+              <Button
+                variant={userMode === 'parent' ? 'default' : 'ghost'}
+                size="sm"
+                onClick={() => setUserMode('parent')}
+                className={`rounded-full px-3 py-1 text-sm font-medium transition-all ${
+                  userMode === 'parent' 
+                    ? 'bg-purple-500 text-white shadow-sm' 
+                    : 'text-purple-600 hover:bg-purple-50'
+                }`}
+              >
+                <User className="w-4 h-4 mr-1" />
+                Parent
+              </Button>
+            </div>
 
             {/* Mobile Menu Button */}
             <Button
