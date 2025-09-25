@@ -458,22 +458,30 @@ const DetectPage = () => {
                       className="w-full rounded-lg"
                     />
                     {/* Detection boxes overlay */}
-                    {detectionResults.map((result, index) => (
-                      <div
-                        key={index}
-                        className="detection-box"
-                        style={{
-                          left: `${result.bbox[0]}px`,
-                          top: `${result.bbox[1]}px`,
-                          width: `${result.bbox[2] - result.bbox[0]}px`,
-                          height: `${result.bbox[3] - result.bbox[1]}px`
-                        }}
-                      >
-                        <div className="detection-label">
-                          {result.class_name} ({Math.round(result.confidence * 100)}%)
+                    {detectionResults.length > 0 && detectionResults.map((result, index) => {
+                      const bbox = result.bbox || { x: 0, y: 0, width: 100, height: 100 }
+                      const x = bbox.x || bbox[0] || 0
+                      const y = bbox.y || bbox[1] || 0  
+                      const width = bbox.width || (bbox[2] - bbox[0]) || 100
+                      const height = bbox.height || (bbox[3] - bbox[1]) || 100
+                      
+                      return (
+                        <div
+                          key={index}
+                          className="absolute border-4 border-yellow-400 bg-yellow-400/20 rounded-lg"
+                          style={{
+                            left: `${x}px`,
+                            top: `${y}px`,
+                            width: `${width}px`,
+                            height: `${height}px`
+                          }}
+                        >
+                          <div className="absolute -top-8 left-0 bg-yellow-400 text-purple-900 px-2 py-1 rounded-md text-sm font-bold">
+                            {result.class_name} ({Math.round(result.confidence * 100)}%)
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      )
+                    })}
                   </div>
                 )}
                 
@@ -502,22 +510,30 @@ const DetectPage = () => {
                         className="max-w-full max-h-64 mx-auto rounded-lg"
                       />
                       {/* Detection boxes overlay */}
-                      {detectionResults.map((result, index) => (
-                        <div
-                          key={index}
-                          className="detection-box"
-                          style={{
-                            left: `${result.bbox[0]}px`,
-                            top: `${result.bbox[1]}px`,
-                            width: `${result.bbox[2] - result.bbox[0]}px`,
-                            height: `${result.bbox[3] - result.bbox[1]}px`
-                          }}
-                        >
-                          <div className="detection-label">
-                            {result.class_name} ({Math.round(result.confidence * 100)}%)
+                      {detectionResults.length > 0 && detectionResults.map((result, index) => {
+                        const bbox = result.bbox || { x: 0, y: 0, width: 100, height: 100 }
+                        const x = bbox.x || bbox[0] || 0
+                        const y = bbox.y || bbox[1] || 0  
+                        const width = bbox.width || (bbox[2] - bbox[0]) || 100
+                        const height = bbox.height || (bbox[3] - bbox[1]) || 100
+                        
+                        return (
+                          <div
+                            key={index}
+                            className="absolute border-4 border-yellow-400 bg-yellow-400/20 rounded-lg"
+                            style={{
+                              left: `${x}px`,
+                              top: `${y}px`,
+                              width: `${width}px`,
+                              height: `${height}px`
+                            }}
+                          >
+                            <div className="absolute -top-8 left-0 bg-yellow-400 text-purple-900 px-2 py-1 rounded-md text-sm font-bold">
+                              {result.class_name} ({Math.round(result.confidence * 100)}%)
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        )
+                      })}
                     </div>
                   ) : (
                     <div className="space-y-4">
@@ -639,8 +655,22 @@ const DetectPage = () => {
               </Button>
             </div>
 
+            {/* Debug Info (remove in production) */}
+            {process.env.NODE_ENV === 'development' && (
+              <div className="bg-gray-100 p-2 rounded text-xs">
+                <p>Debug: detectionResults.length = {detectionResults.length}</p>
+                <p>Debug: foodItems.length = {foodItems.length}</p>
+                <p>Debug: nutritionView = {nutritionView}</p>
+                {detectionResults.length > 0 && (
+                  <pre className="text-xs overflow-auto max-h-20">
+                    {JSON.stringify(detectionResults[0], null, 2)}
+                  </pre>
+                )}
+              </div>
+            )}
+
             {/* Results Content */}
-            {detectionResults.length > 0 && (
+            {detectionResults.length > 0 ? (
               <div className="space-y-4">
                 {nutritionView === 'nutrition' && foodItems.length > 0 ? (
                   /* Nutrition View */
@@ -743,6 +773,32 @@ const DetectPage = () => {
                     }
                   </AlertDescription>
                 </Alert>
+              </div>
+            ) : !isDetecting && (capturedImage || uploadedImage) && (
+              /* No Results Found */
+              <div className="text-center py-8 space-y-4">
+                <div className="text-6xl">🤔</div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                    {userMode === 'kid' 
+                      ? "Hmm, I can't see anything clear in your picture!"
+                      : "No objects detected in the image"
+                    }
+                  </h3>
+                  <p className="text-gray-600">
+                    {userMode === 'kid' 
+                      ? "Try taking a clearer picture with good lighting! Make sure your food or object is in the center! 📸✨"
+                      : "Please try again with better lighting or a clearer image. Make sure objects are clearly visible and in focus."
+                    }
+                  </p>
+                </div>
+                <Button 
+                  onClick={performDetection}
+                  className="kids-button"
+                  disabled={isDetecting}
+                >
+                  🔍 Try Detection Again
+                </Button>
               </div>
             )}
 
