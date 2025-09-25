@@ -1,23 +1,15 @@
 {
-  "name": "kids-object-explorer",
+  "name": "kids-b-care",
   "version": "1.0.0",
   "description": "A child-friendly object detection application",
   "private": true,
   "scripts": {
     "dev": "cd apps/web && npm run dev",
-    "build": "cd apps/web && npm run build",
+    "build": "cd apps/web && npm install --legacy-peer-deps && npm run build",
     "preview": "cd apps/web && npm run preview",
-    "lint": "cd apps/web && npm run lint",
-    "install": "npm install --legacy-peer-deps"
-  },
-  "workspaces": [
-    "apps/*"
-  ],
-  "devDependencies": {
-    "@types/node": "^20.0.0"
+    "lint": "cd apps/web && npm run lint"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "pnpm": ">=6.35.0"
+    "node": ">=18.0.0"
   }
 }
