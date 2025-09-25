@@ -71,8 +71,12 @@ const AppHeader = () => {
           {/* Logo and Title */}
           <div className="flex items-center space-x-4">
             <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-2xl">🍎</span>
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg p-1">
+                <img 
+                  src="/logo.svg" 
+                  alt="Kids B-Care Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
             <div className="hidden md:block">

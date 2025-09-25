@@ -48,8 +48,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full group-hover:scale-110 transition-transform duration-200">
-              <Baby className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 bg-white rounded-full p-1 shadow-md group-hover:scale-110 transition-transform duration-200">
+              <img 
+                src="/logo.svg" 
+                alt="Kids B-Care Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Kids B-Care
