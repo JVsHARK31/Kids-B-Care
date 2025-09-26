@@ -79,27 +79,27 @@ const JournalPage = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-700 mb-2">
                       {userMode === 'kid' ? 'Belum ada penemuan!' : 'No detections yet'}
-                    </h3>
-                    <p className="text-gray-600">
+            </h3>
+            <p className="text-gray-600">
                       {userMode === 'kid' 
                         ? 'Mulai explore untuk mengisi journal kamu!' 
                         : 'Start detecting to build your history'
-                      }
-                    </p>
+              }
+            </p>
                   </div>
                 </div>
               ) : (
                 detections.map((detection) => (
                   <div 
-                    key={detection.id}
+              key={detection.id} 
                     className={`p-4 rounded-lg border-2 cursor-pointer transition-all hover:shadow-md ${
                       selectedDetection?.id === detection.id 
                         ? 'border-purple-400 bg-purple-50' 
                         : 'border-gray-200 hover:border-purple-200'
                     }`}
-                    onClick={() => setSelectedDetection(detection)}
-                  >
-                    <div className="flex items-center justify-between">
+              onClick={() => setSelectedDetection(detection)}
+            >
+                <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <div className="w-12 h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-lg flex items-center justify-center">
                           <Camera className="w-6 h-6 text-white" />
@@ -127,18 +127,18 @@ const JournalPage = () => {
                         >
                           <Download className="w-4 h-4" />
                         </Button>
-                        <Button
-                          size="sm"
+                  <Button
+                    size="sm"
                           variant="outline"
-                          onClick={(e) => {
-                            e.stopPropagation()
-                            deleteDetection(detection.id)
-                          }}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      deleteDetection(detection.id)
+                    }}
                           className="text-red-600 hover:text-red-700"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </Button>
-                      </div>
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </Button>
+                </div>
                     </div>
                   </div>
                 ))
@@ -169,23 +169,23 @@ const JournalPage = () => {
                   <div className="text-sm text-gray-600">Source</div>
                   <Badge className="bg-blue-100 text-blue-700">
                     {selectedDetection.source}
-                  </Badge>
+                      </Badge>
                 </div>
-
+                
                 <div className="space-y-2">
                   <div className="text-sm text-gray-600">Detected Items</div>
                   <div className="space-y-2">
-                    {selectedDetection.results.map((result, index) => (
+                  {selectedDetection.results.map((result, index) => (
                       <div key={index} className="flex items-center justify-between p-2 bg-gray-50 rounded">
                         <span className="font-medium">{result.class_name}</span>
                         <Badge className="bg-green-100 text-green-700">
                           {Math.round(result.confidence * 100)}%
                         </Badge>
-                      </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
-
+              </div>
+              
                 {selectedDetection.image && (
                   <div className="space-y-2">
                     <div className="text-sm text-gray-600">Image</div>
@@ -208,8 +208,8 @@ const JournalPage = () => {
                     : 'Select a detection to view details'
                   }
                 </p>
-              </CardContent>
-            </Card>
+            </CardContent>
+          </Card>
           )}
         </div>
       </div>
