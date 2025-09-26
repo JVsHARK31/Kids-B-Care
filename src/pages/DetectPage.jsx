@@ -37,6 +37,9 @@ const DetectPage = () => {
   const webcamRef = useRef(null)
   const fileInputRef = useRef(null)
   const modelRef = useRef(null)
+  const uploadedImgRef = useRef(null)
+  const capturedImgRef = useRef(null)
+  const [detectionMeta, setDetectionMeta] = useState({ sourceWidth: 0, sourceHeight: 0 })
 
   // Load COCO-SSD model once
   useEffect(() => {
@@ -70,6 +73,7 @@ const DetectPage = () => {
         })
 
         const predictions = await modelRef.current.detect(img)
+        setDetectionMeta({ sourceWidth: img.width, sourceHeight: img.height })
         // Analyze whole image for color-based Indonesian food inference
         const wholeAnalysis = analyzeWholeImageFromElement(img)
         const foodMap = {
@@ -748,7 +752,7 @@ const DetectPage = () => {
     URL.revokeObjectURL(url)
   }
 
-  const foodItems = detectionResults.filter(result => getNutritionInfo(result.class_name))
+  const foodItems = detectionResults.filter(result => getNutritionInfo(result.class_name) || result._nutrition_remote)
 
   return (
     <div className="max-w-6xl mx-auto space-y-6">
@@ -821,6 +825,7 @@ const DetectPage = () => {
                   {uploadedImage ? (
                     <div className="relative">
                       <img 
+                        ref={uploadedImgRef}
                         src={uploadedImage} 
                         alt="Uploaded" 
                         className="max-w-full max-h-64 mx-auto rounded-lg"
@@ -829,16 +834,23 @@ const DetectPage = () => {
                       {detectionResults.map((result, index) => {
                         const nutrition = getNutritionInfo(result.class_name)
                         if (!nutrition) return null
-                        
+                        // Skala bbox dari ukuran asli ke ukuran tampilan
+                        const imgEl = uploadedImgRef.current
+                        const scaleX = imgEl ? (imgEl.clientWidth / (detectionMeta.sourceWidth || imgEl.naturalWidth || 1)) : 1
+                        const scaleY = imgEl ? (imgEl.clientHeight / (detectionMeta.sourceHeight || imgEl.naturalHeight || 1)) : 1
+                        const left = result.bbox.x * scaleX
+                        const top = result.bbox.y * scaleY
+                        const width = result.bbox.width * scaleX
+                        const height = result.bbox.height * scaleY
                         return (
                           <div
                             key={index}
                             className="absolute border-4 border-yellow-400 bg-yellow-400/20 rounded-lg"
                             style={{
-                              left: `${result.bbox.x}px`,
-                              top: `${result.bbox.y}px`,
-                              width: `${result.bbox.width}px`,
-                              height: `${result.bbox.height}px`
+                              left: `${left}px`,
+                              top: `${top}px`,
+                              width: `${width}px`,
+                              height: `${height}px`
                             }}
                           >
                             <div className="absolute -top-8 left-0 bg-yellow-400 text-purple-900 px-2 py-1 rounded-md text-sm font-bold">
@@ -885,6 +897,7 @@ const DetectPage = () => {
                 ) : (
                   <div className="relative">
                     <img 
+                      ref={capturedImgRef}
                       src={capturedImage} 
                       alt="Captured" 
                       className="w-full rounded-lg"
@@ -893,16 +906,22 @@ const DetectPage = () => {
                     {detectionResults.map((result, index) => {
                       const nutrition = getNutritionInfo(result.class_name)
                       if (!nutrition) return null
-                      
+                      const imgEl = capturedImgRef.current
+                      const scaleX = imgEl ? (imgEl.clientWidth / (detectionMeta.sourceWidth || imgEl.naturalWidth || 1)) : 1
+                      const scaleY = imgEl ? (imgEl.clientHeight / (detectionMeta.sourceHeight || imgEl.naturalHeight || 1)) : 1
+                      const left = result.bbox.x * scaleX
+                      const top = result.bbox.y * scaleY
+                      const width = result.bbox.width * scaleX
+                      const height = result.bbox.height * scaleY
                       return (
                         <div
                           key={index}
                           className="absolute border-4 border-yellow-400 bg-yellow-400/20 rounded-lg"
                           style={{
-                            left: `${result.bbox.x}px`,
-                            top: `${result.bbox.y}px`,
-                            width: `${result.bbox.width}px`,
-                            height: `${result.bbox.height}px`
+                            left: `${left}px`,
+                            top: `${top}px`,
+                            width: `${width}px`,
+                            height: `${height}px`
                           }}
                         >
                           <div className="absolute -top-8 left-0 bg-yellow-400 text-purple-900 px-2 py-1 rounded-md text-sm font-bold">
@@ -1075,17 +1094,21 @@ const DetectPage = () => {
                       📊 Total Nutrisi Makanan
                     </h3>
                     
-                    {(() => {
-                      const totalNutrition = foodItems.reduce((total, food) => {
-                        const nutrition = getNutritionInfo(food.class_name)
-                        if (!nutrition) return total
-                        return {
-                          calories: total.calories + nutrition.nutrition.calories,
-                          protein: total.protein + nutrition.nutrition.protein,
-                          carbs: total.carbs + nutrition.nutrition.carbs,
-                          calcium: total.calcium + (nutrition.nutrition.calcium || 0)
-                        }
-                      }, { calories: 0, protein: 0, carbs: 0, calcium: 0 })
+                         {(() => {
+                           const totalNutrition = foodItems.reduce((total, food) => {
+                             const local = getNutritionInfo(food.class_name)
+                             const remote = food._nutrition_remote
+                             const calories = local?.nutrition?.calories ?? remote?.calories_kcal ?? 0
+                             const protein = local?.nutrition?.protein ?? remote?.macros?.protein_g ?? 0
+                             const carbs = local?.nutrition?.carbs ?? remote?.macros?.carbs_g ?? 0
+                             const calcium = (local?.nutrition?.calcium ?? remote?.micros?.calcium_mg ?? 0)
+                             return {
+                               calories: total.calories + calories,
+                               protein: total.protein + protein,
+                               carbs: total.carbs + carbs,
+                               calcium: total.calcium + calcium
+                             }
+                           }, { calories: 0, protein: 0, carbs: 0, calcium: 0 })
 
                       return (
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3 text-center">
