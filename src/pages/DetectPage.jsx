@@ -93,17 +93,20 @@ const DetectPage = () => {
           'bowl': 'mangkuk'
         }
 
-        detectedFoods = predictions
-          .filter(p => p.score >= 0.5 && foodMap[p.class])
+        const minConfidence = 0.55
+        const mapped = predictions
+          .filter(p => p.score >= minConfidence && foodMap[p.class])
           .map(p => ({
             name: foodMap[p.class],
-            confidence: p.score,
+            confidence: Math.min(0.99, Math.max(minConfidence, p.score)),
             bbox: { x: p.bbox[0], y: p.bbox[1], width: p.bbox[2], height: p.bbox[3] }
           }))
+        // Gabungkan deteksi kelas sama dan hindari overlap berat
+        detectedFoods = mergeDetections(mapped)
 
         // Post-process to infer Indonesian foods not in COCO labels
         const inferred = postProcessFoods(predictions, wholeAnalysis)
-        detectedFoods = [...detectedFoods, ...inferred]
+        detectedFoods = mergeDetections([...detectedFoods, ...inferred])
       }
 
       // Fallback ke YOLO-like region analysis jika kosong / model belum siap
@@ -352,6 +355,27 @@ const DetectPage = () => {
     const union = area1 + area2 - intersection
     
     return intersection / union
+  }
+
+  // Merge detections with same label; keep highest confidence, avoid heavy overlaps
+  const mergeDetections = (items) => {
+    const out = []
+    for (const it of items) {
+      let merged = false
+      for (let i = 0; i < out.length; i++) {
+        const ex = out[i]
+        if (ex.name === it.name) {
+          const iou = calculateIoU(ex.bbox, it.bbox)
+          if (iou > 0.35) {
+            out[i] = ex.confidence >= it.confidence ? ex : it
+            merged = true
+            break
+          }
+        }
+      }
+      if (!merged) out.push(it)
+    }
+    return out
   }
 
   // Analyze entire image from an HTMLImageElement
