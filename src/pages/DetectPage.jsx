@@ -1,4 +1,6 @@
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
+import '@tensorflow/tfjs'
+import * as cocoSsd from '@tensorflow-models/coco-ssd'
 import Webcam from 'react-webcam'
 import { 
   Camera, 
@@ -34,8 +36,18 @@ const DetectPage = () => {
   
   const webcamRef = useRef(null)
   const fileInputRef = useRef(null)
+  const modelRef = useRef(null)
 
-  // YOLO-like food detection with region analysis
+  // Load COCO-SSD model once
+  useEffect(() => {
+    let isMounted = true
+    cocoSsd.load({ base: 'lite_mobilenet_v2' })
+      .then((model) => { if (isMounted) modelRef.current = model })
+      .catch((e) => console.error('Load coco-ssd error:', e))
+    return () => { isMounted = false }
+  }, [])
+
+  // Primary: COCO-SSD detection; Fallback: YOLO-like region analysis
   const performDetection = async () => {
     const imageToDetect = capturedImage || uploadedImage
     if (!imageToDetect) {
@@ -47,12 +59,47 @@ const DetectPage = () => {
     setError(null)
 
     try {
-      // Simulate YOLO processing with realistic timing
-      await new Promise(r => setTimeout(r, 4000))
-      
-      // YOLO-like region detection
-      const regions = await detectFoodRegions(imageToDetect)
-      const detectedFoods = await analyzeRegions(regions, imageToDetect)
+      // Try COCO-SSD first for real object detection
+      let detectedFoods = []
+      if (modelRef.current) {
+        const img = await new Promise((resolve) => {
+          const i = new Image()
+          i.crossOrigin = 'anonymous'
+          i.onload = () => resolve(i)
+          i.src = imageToDetect
+        })
+
+        const predictions = await modelRef.current.detect(img)
+        const foodMap = {
+          'banana': 'banana',
+          'apple': 'apple',
+          'orange': 'orange',
+          'sandwich': 'sandwich',
+          'hot dog': 'sosis',
+          'pizza': 'pizza',
+          'broccoli': 'sayur',
+          'carrot': 'sayur',
+          'cake': 'kue',
+          'donut': 'donat',
+          'bottle': 'susu coklat'
+        }
+
+        detectedFoods = predictions
+          .filter(p => p.score >= 0.5 && foodMap[p.class])
+          .map(p => ({
+            name: foodMap[p.class],
+            confidence: p.score,
+            bbox: { x: p.bbox[0], y: p.bbox[1], width: p.bbox[2], height: p.bbox[3] }
+          }))
+      }
+
+      // Fallback ke YOLO-like region analysis jika kosong / model belum siap
+      if (!detectedFoods || detectedFoods.length === 0) {
+        // Simulate processing time agar UX konsisten
+        await new Promise(r => setTimeout(r, 800))
+        const regions = await detectFoodRegions(imageToDetect)
+        detectedFoods = await analyzeRegions(regions, imageToDetect)
+      }
       
       const results = detectedFoods.map((food, index) => ({
         class_name: food.name,
