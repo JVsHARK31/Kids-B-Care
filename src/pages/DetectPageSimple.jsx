@@ -22,7 +22,7 @@ import { Badge } from '@/components/ui/badge'
 import { useAppContext } from '../App'
 import { getNutritionInfo } from '../lib/nutritionDatabase'
 
-const DetectPage = () => {
+const DetectPageSimple = () => {
   const { userMode, detections, setDetections } = useAppContext()
   const [activeTab, setActiveTab] = useState('upload') // Start with upload for simplicity
   const [isDetecting, setIsDetecting] = useState(false)
@@ -593,4 +593,4 @@ const DetectPage = () => {
   )
 }
 
-export default DetectPage
+export default DetectPageSimple
