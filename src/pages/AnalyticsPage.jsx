@@ -78,7 +78,7 @@ const AnalyticsPage = () => {
       </Card>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
         <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
           <CardContent className="text-center p-6">
             <BarChart3 className="w-8 h-8 text-blue-500 mx-auto mb-2" />
@@ -114,7 +114,7 @@ const AnalyticsPage = () => {
         </Card>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 lg:gap-6">
         {/* Top Discovered Items */}
         <Card>
           <CardHeader>

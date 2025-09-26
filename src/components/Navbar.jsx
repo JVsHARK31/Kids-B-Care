@@ -65,7 +65,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden lg:flex items-center space-x-2">
             {navItems.map((item) => {
               const Icon = item.icon
               const isActive = location.pathname === item.path
@@ -125,7 +125,7 @@ const Navbar = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden p-2"
+              className="lg:hidden p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
@@ -139,7 +139,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-purple-200">
+          <div className="lg:hidden py-4 border-t border-purple-200">
             <div className="grid grid-cols-2 gap-2">
               {navItems.map((item) => {
                 const Icon = item.icon

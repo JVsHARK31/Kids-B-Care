@@ -121,7 +121,7 @@ const HomePage = () => {
       </div>
 
       {/* Feature Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
         {features.map((feature) => {
           const Icon = feature.icon
           
@@ -158,7 +158,7 @@ const HomePage = () => {
           <h2 className="text-3xl font-bold text-purple-700">
             Did You Know? 🤔
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6 text-center">
             <div className="space-y-2">
               <div className="text-4xl font-bold text-pink-600">1000+</div>
               <div className="text-gray-700">Objects to Discover</div>

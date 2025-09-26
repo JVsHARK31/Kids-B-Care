@@ -86,7 +86,7 @@ const SettingsPage = () => {
             }
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div 
               className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                 userMode === 'kid' 
@@ -150,7 +150,7 @@ const SettingsPage = () => {
             }
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {languages.map((lang) => (
               <div 
                 key={lang.code}
@@ -188,7 +188,7 @@ const SettingsPage = () => {
             }
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {themes.map((theme) => {
               const Icon = theme.icon
               return (
