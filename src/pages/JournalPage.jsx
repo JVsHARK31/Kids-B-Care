@@ -5,7 +5,11 @@ import {
   Camera, 
   Eye,
   Download,
-  Trash2
+  Trash2,
+  Stethoscope,
+  Baby,
+  Apple,
+  Brain
 } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
@@ -212,6 +216,59 @@ const JournalPage = () => {
           </Card>
           )}
         </div>
+      </div>
+    </div>
+
+    {/* Pediatric Nutrition Tips */}
+    <div className="max-w-6xl mx-auto">
+      <div className="mt-2"></div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Card className="kids-card border-2 border-green-200">
+          <CardHeader>
+            <CardTitle className="flex items-center space-x-2 text-green-700">
+              <Stethoscope className="w-6 h-6" />
+              <span>Jurnal Gizi Anak (Evidence-based)</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div className="p-4 rounded-xl bg-green-50 border border-green-200">
+              <div className="flex items-center gap-2 font-semibold text-green-800">
+                <Baby className="w-4 h-4" /> Porsi & Energi Harian
+              </div>
+              <ul className="list-disc ml-5 mt-2 text-green-700">
+                <li>Balita: 1000–1400 kcal/hari; Anak 6–12 th: 1400–2200 kcal/hari.</li>
+                <li>Piring: 1/2 sayur&buah, 1/4 protein, 1/4 karbo kompleks.</li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-xl bg-blue-50 border border-blue-200">
+              <div className="flex items-center gap-2 font-semibold text-blue-800">
+                <Apple className="w-4 h-4" /> Makronutrien Seimbang
+              </div>
+              <ul className="list-disc ml-5 mt-2 text-blue-700">
+                <li>Protein 1.0–1.2 g/kg/hari; serat ≥ 14 g/1000 kcal.</li>
+                <li>Batasi gula tambahan & minuman manis.</li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-xl bg-yellow-50 border border-yellow-200">
+              <div className="flex items-center gap-2 font-semibold text-yellow-800">
+                <Brain className="w-4 h-4" /> Mikronutrien Kunci
+              </div>
+              <ul className="list-disc ml-5 mt-2 text-yellow-700">
+                <li>Zat besi, kalsium, vitamin A & C dari menu beragam.</li>
+                <li>Target 5 warna sayur/buah per hari.</li>
+              </ul>
+            </div>
+            <div className="p-4 rounded-xl bg-purple-50 border border-purple-200">
+              <div className="flex items-center gap-2 font-semibold text-purple-800">
+                <Stethoscope className="w-4 h-4" /> Kebiasaan Makan Sehat
+              </div>
+              <ul className="list-disc ml-5 mt-2 text-purple-700">
+                <li>Jadwal makan teratur; porsi kecil tapi sering.</li>
+                <li>Libatkan anak menyiapkan makanan untuk menumbuhkan minat.</li>
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )

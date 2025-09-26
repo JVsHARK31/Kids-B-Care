@@ -823,7 +823,7 @@ const DetectPage = () => {
                   onClick={() => fileInputRef.current?.click()}
                 >
                   {uploadedImage ? (
-                    <div className="relative">
+                    <div className="relative inline-block">
                       <img 
                         ref={uploadedImgRef}
                         src={uploadedImage} 
@@ -886,7 +886,7 @@ const DetectPage = () => {
             ) : (
               <div className="space-y-4">
                 {!capturedImage ? (
-                  <div className="relative rounded-lg overflow-hidden bg-gray-100">
+                    <div className="relative inline-block rounded-lg overflow-hidden bg-gray-100">
                     <Webcam
                       audio={false}
                       ref={webcamRef}
