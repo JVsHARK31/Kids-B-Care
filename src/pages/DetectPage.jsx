@@ -15,10 +15,10 @@ import {
   FileText,
   Share2
 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Alert, AlertDescription } from '@/components/ui/alert'
-import { Badge } from '@/components/ui/badge'
+import { Button } from '../components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
+import { Alert, AlertDescription } from '../components/ui/alert'
+import { Badge } from '../components/ui/badge'
 import { useAppContext } from '../App'
 import { getNutritionInfo } from '../lib/nutritionDatabase'
 

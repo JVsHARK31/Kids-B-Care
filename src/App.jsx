@@ -50,7 +50,7 @@ function App() {
               <ErrorBoundary>
                 <Routes>
                   <Route path="/" element={<HomePage />} />
-                  <Route path="/detect" element={<DetectPageSimple />} />
+                  <Route path="/detect" element={<DetectPage />} />
                   <Route path="/journal" element={<JournalPage />} />
                   <Route path="/analytics" element={<AnalyticsPage />} />
                   <Route path="/settings" element={<SettingsPage />} />
