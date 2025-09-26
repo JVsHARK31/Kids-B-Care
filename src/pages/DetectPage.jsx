@@ -70,6 +70,8 @@ const DetectPage = () => {
         })
 
         const predictions = await modelRef.current.detect(img)
+        // Analyze whole image for color-based Indonesian food inference
+        const wholeAnalysis = analyzeWholeImageFromElement(img)
         const foodMap = {
           'banana': 'banana',
           'apple': 'apple',
@@ -81,7 +83,10 @@ const DetectPage = () => {
           'carrot': 'sayur',
           'cake': 'kue',
           'donut': 'donat',
-          'bottle': 'susu coklat'
+          'bottle': 'susu coklat',
+          'cup': 'susu coklat',
+          'wine glass': 'susu coklat',
+          'bowl': 'mangkuk'
         }
 
         detectedFoods = predictions
@@ -91,6 +96,10 @@ const DetectPage = () => {
             confidence: p.score,
             bbox: { x: p.bbox[0], y: p.bbox[1], width: p.bbox[2], height: p.bbox[3] }
           }))
+
+        // Post-process to infer Indonesian foods not in COCO labels
+        const inferred = postProcessFoods(predictions, wholeAnalysis)
+        detectedFoods = [...detectedFoods, ...inferred]
       }
 
       // Fallback ke YOLO-like region analysis jika kosong / model belum siap
@@ -318,6 +327,89 @@ const DetectPage = () => {
     const union = area1 + area2 - intersection
     
     return intersection / union
+  }
+
+  // Analyze entire image from an HTMLImageElement
+  const analyzeWholeImageFromElement = (imgEl) => {
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+    const maxSize = 400
+    const scale = Math.min(maxSize / imgEl.width, maxSize / imgEl.height)
+    canvas.width = imgEl.width * scale
+    canvas.height = imgEl.height * scale
+    ctx.drawImage(imgEl, 0, 0, canvas.width, canvas.height)
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+    return {
+      colors: analyzeColors(imageData),
+      brightness: calculateBrightness(imageData),
+      contrast: calculateContrast(imageData)
+    }
+  }
+
+  // Post-process predictions to infer Indonesian foods
+  const postProcessFoods = (predictions, whole) => {
+    const results = []
+    const hasBowl = predictions.some(p => p.class === 'bowl' && p.score > 0.5)
+    const hasBottleOrCup = predictions.some(p => (p.class === 'bottle' || p.class === 'cup' || p.class === 'wine glass') && p.score > 0.5)
+    const hasEgg = predictions.some(p => p.class === 'fried egg' || p.class === 'cake') // COCO tidak punya egg; gunakan proxy
+    const hasHotdog = predictions.some(p => p.class === 'hot dog' && p.score > 0.6)
+    const hasBanana = predictions.some(p => p.class === 'banana' && p.score > 0.6)
+
+    // Bubur ayam: bowl + bright white/yellow + no noodles
+    if (hasBowl && whole.brightness > 0.6 && whole.colors.red < 0.6 && whole.colors.green < 0.7) {
+      // Ambil bbox bowl tertinggi sebagai area utama
+      const bowl = predictions.filter(p => p.class === 'bowl').sort((a,b)=>b.score-a.score)[0]
+      if (bowl) {
+        results.push({
+          name: 'bubur ayam',
+          confidence: Math.min(0.9, 0.6 + (whole.brightness - 0.5)),
+          bbox: { x: bowl.bbox[0], y: bowl.bbox[1], width: bowl.bbox[2], height: bowl.bbox[3] }
+        })
+      }
+    }
+
+    // Telur mata sapi: bright white circle with orange center → gunakan proxy dari brightness tinggi + tidak ada bowl
+    if (!hasBowl && whole.brightness > 0.65 && whole.colors.red > 0.5 && whole.colors.green > 0.5) {
+      // Cari area terbesar dari predictions untuk bounding
+      const anchor = predictions[0]
+      if (anchor) {
+        results.push({
+          name: 'telur mata sapi',
+          confidence: 0.7,
+          bbox: { x: anchor.bbox[0], y: anchor.bbox[1], width: anchor.bbox[2], height: anchor.bbox[3] }
+        })
+      }
+    }
+
+    // Sosis (hot dog proxy)
+    if (hasHotdog) {
+      const item = predictions.find(p => p.class === 'hot dog')
+      results.push({
+        name: 'sosis',
+        confidence: Math.min(0.95, item.score + 0.1),
+        bbox: { x: item.bbox[0], y: item.bbox[1], width: item.bbox[2], height: item.bbox[3] }
+      })
+    }
+
+    // Susu coklat (bottle/cup + brown dominance)
+    if (hasBottleOrCup && whole.colors.red > 0.5 && whole.colors.green > 0.4 && whole.colors.blue < 0.5) {
+      const item = predictions.find(p => (p.class === 'bottle' || p.class === 'cup' || p.class === 'wine glass'))
+      if (item) {
+        results.push({
+          name: 'susu coklat',
+          confidence: 0.75,
+          bbox: { x: item.bbox[0], y: item.bbox[1], width: item.bbox[2], height: item.bbox[3] }
+        })
+      }
+    }
+
+    // Banana tetap dari COCO, tapi jika ada banana + egg + hotdog → asumsikan set sarapan
+    if (hasBanana && hasHotdog) {
+      // Tambah sedikit confidence pada hasil lain
+      results.forEach(r => { r.confidence = Math.min(0.95, (r.confidence || 0.6) + 0.05) })
+    }
+
+    return results
   }
 
   // Analyze colors in the image
