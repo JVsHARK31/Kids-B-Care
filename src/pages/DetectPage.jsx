@@ -59,7 +59,7 @@ const DetectPage = () => {
     setError(null)
 
     try {
-      // Try COCO-SSD first for real object detection
+      // Try COCO-SSD first untuk objek; lalu kirim hint ke Sumopod untuk nutrisi
       let detectedFoods = []
       if (modelRef.current) {
         const img = await new Promise((resolve) => {
@@ -110,11 +110,32 @@ const DetectPage = () => {
         detectedFoods = await analyzeRegions(regions, imageToDetect)
       }
       
-      const results = detectedFoods.map((food, index) => ({
-        class_name: food.name,
-        confidence: food.confidence,
-        bbox: food.bbox
-      })).filter(result => getNutritionInfo(result.class_name))
+      // Kumpulkan hint untuk Sumopod
+      const hints = detectedFoods.map(f => f.name)
+      const sumopodNutrition = await fetch('/api/sumopod', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ food_hints: hints.length ? hints : ['makanan'] })
+      }).then(r => r.json()).catch(() => ({ results: [] }))
+
+      const nutritionMap = new Map()
+      for (const item of (sumopodNutrition?.results || [])) {
+        if (item?.food_name) nutritionMap.set(item.food_name.toLowerCase(), item)
+      }
+
+      const results = detectedFoods.map((food) => {
+        const local = getNutritionInfo(food.name)
+        const remote = nutritionMap.get((local?.name || food.name).toLowerCase())
+        // gunakan nama dari remote jika ada, kalau tidak fallback ke local/name deteksi
+        const finalName = remote?.food_name || local?.name || food.name
+        return {
+          class_name: finalName,
+          confidence: food.confidence,
+          bbox: food.bbox,
+          _nutrition_remote: remote || null
+        }
+      })
+      // Jika tidak ada hasil deteksi, tetap kosongkan agar UI menampilkan pesan
 
       setDetectionResults(results)
       
@@ -990,49 +1011,57 @@ const DetectPage = () => {
                     Makanan yang Terdeteksi:
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {foodItems.map((result, index) => {
-                      const nutrition = getNutritionInfo(result.class_name)
-                      if (!nutrition) return null
+                             {foodItems.map((result, index) => {
+                               // Prioritas nutrisi dari Sumopod jika tersedia
+                               const remote = result._nutrition_remote
+                               const nutrition = getNutritionInfo(result.class_name)
+                               const name = remote?.food_name || nutrition?.name || result.class_name
+                               const display = remote || nutrition
+                               if (!display) return null
                       
                       return (
                         <div key={index} className="bg-white p-3 rounded-lg border-2 border-purple-200 shadow-sm">
                           <div className="flex items-center space-x-2 mb-2">
-                            <span className="text-2xl">{nutrition.emoji}</span>
+                                     <span className="text-2xl">{nutrition?.emoji || '🍽️'}</span>
                             <div className="flex-1">
-                              <div className="font-semibold text-purple-700">{nutrition.name}</div>
+                                       <div className="font-semibold text-purple-700">{name}</div>
                               <div className="text-xs text-gray-600">
                                 Confidence: {Math.round(result.confidence * 100)}%
                               </div>
                             </div>
-                            <Badge className={`text-xs ${
-                              nutrition.kidFriendly?.healthScore >= 8 ? 'bg-green-500' :
-                              nutrition.kidFriendly?.healthScore >= 6 ? 'bg-yellow-500' :
-                              nutrition.kidFriendly?.healthScore >= 4 ? 'bg-orange-500' : 'bg-red-500'
-                            } text-white`}>
-                              {nutrition.kidFriendly?.healthScore}/10
-                            </Badge>
+                                     {nutrition?.kidFriendly?.healthScore != null && (
+                                       <Badge className={`text-xs ${
+                                         nutrition.kidFriendly?.healthScore >= 8 ? 'bg-green-500' :
+                                         nutrition.kidFriendly?.healthScore >= 6 ? 'bg-yellow-500' :
+                                         nutrition.kidFriendly?.healthScore >= 4 ? 'bg-orange-500' : 'bg-red-500'
+                                       } text-white`}>
+                                         {nutrition.kidFriendly?.healthScore}/10
+                                       </Badge>
+                                     )}
                           </div>
                           
                           {/* Quick nutrition stats */}
                           <div className="grid grid-cols-3 gap-1 text-xs">
                             <div className="text-center bg-orange-50 rounded p-1">
-                              <div className="font-bold text-orange-600">{nutrition.nutrition.calories}</div>
+                                       <div className="font-bold text-orange-600">{(display?.nutrition?.calories ?? display?.calories_kcal) || 0}</div>
                               <div className="text-gray-500">kcal</div>
                             </div>
                             <div className="text-center bg-blue-50 rounded p-1">
-                              <div className="font-bold text-blue-600">{nutrition.nutrition.protein}g</div>
+                                       <div className="font-bold text-blue-600">{(display?.nutrition?.protein ?? display?.macros?.protein_g) || 0}g</div>
                               <div className="text-gray-500">protein</div>
                             </div>
                             <div className="text-center bg-purple-50 rounded p-1">
-                              <div className="font-bold text-purple-600">{nutrition.nutrition.calcium || 0}mg</div>
+                                       <div className="font-bold text-purple-600">{(display?.nutrition?.calcium ?? display?.micros?.calcium_mg) || 0}mg</div>
                               <div className="text-gray-500">kalsium</div>
                             </div>
                           </div>
                           
                           {/* Fun description */}
-                          <div className="mt-2 text-xs text-purple-600 bg-purple-50 rounded p-2">
-                            {nutrition.kidFriendly?.description}
-                          </div>
+                                   {nutrition?.kidFriendly?.description && (
+                                     <div className="mt-2 text-xs text-purple-600 bg-purple-50 rounded p-2">
+                                       {nutrition.kidFriendly?.description}
+                                     </div>
+                                   )}
                         </div>
                       )
                     })}
